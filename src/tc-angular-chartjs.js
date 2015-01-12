@@ -7,14 +7,14 @@
   'use strict';
   angular
     .module( 'tc.chartjs', [] )
-    .directive( 'tcChartjs', TcChartjs )
-    .directive( 'tcChartjsLine', TcChartjsLine )
-    .directive( 'tcChartjsBar', TcChartjsBar )
-    .directive( 'tcChartjsRadar', TcChartjsRadar )
-    .directive( 'tcChartjsPolararea', TcChartjsPolararea )
-    .directive( 'tcChartjsPie', TcChartjsPie )
-    .directive( 'tcChartjsDoughnut', TcChartjsDoughnut )
-    .directive( 'tcChartjsLegend', TcChartjsLegend )
+    .directive( 'tcChartjs', [ "TcChartjsFactory", TcChartjs ] )
+    .directive( 'tcChartjsLine', [ "TcChartjsFactory", TcChartjsLine ] )
+    .directive( 'tcChartjsBar', [ "TcChartjsFactory", TcChartjsBar ] )
+    .directive( 'tcChartjsRadar', [ "TcChartjsFactory", TcChartjsRadar ] )
+    .directive( 'tcChartjsPolararea', [ "TcChartjsFactory", TcChartjsPolararea ] )
+    .directive( 'tcChartjsPie', [ "TcChartjsFactory", TcChartjsPie ] )
+    .directive( 'tcChartjsDoughnut', [ "TcChartjsFactory", TcChartjsDoughnut ] )
+    .directive( 'tcChartjsLegend', [ "TcChartjsFactory", TcChartjsLegend ] )
     .factory( 'TcChartjsFactory', TcChartjsFactory );
 
   function TcChartjs( TcChartjsFactory ) {
